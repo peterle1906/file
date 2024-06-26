@@ -43,7 +43,7 @@
             <Metadata>
               <SourceLocation resid="Functions.Metadata.Url"/>
             </Metadata>
-						<Namespace resid="namespace"/>
+		<Namespace resid="namespace"/>
           </ExtensionPoint>
         </AllFormFactors>
         <DesktopFormFactor>

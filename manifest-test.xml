@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>My Id</Id>
+  <Version>1.0.0.13</Version>
+  <ProviderName>My Application</ProviderName>
+  <DefaultLocale>en-AU</DefaultLocale>
+  <DisplayName DefaultValue="My Application (Local)"/>
+  <Description DefaultValue="My Application"/>
+  <IconUrl DefaultValue="https://localhost:3000/assets/icons/excel/Application-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icons/excel/Application-80.png"/>
+  <SupportUrl DefaultValue="https://support.myapplication.com/support/home"/>
+  <AppDomains>
+    <AppDomain>https://localhost:3000</AppDomain>
+    <AppDomain>https://localhost:44321</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="CustomFunctionsRuntime" MinVersion="1.1"/>
+      <Set Name="SharedRuntime" MinVersion="1.1"/>
+    </Sets>
+  </Requirements>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:3000/"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <Runtimes>
+          <Runtime resid="Taskpane.Url" lifetime="long"/>
+        </Runtimes>
+        <AllFormFactors>
+          <ExtensionPoint xsi:type="CustomFunctions">
+            <Script>
+              <SourceLocation resid="Taskpane.Url"/>
+            </Script>
+            <Page>
+              <SourceLocation resid="Taskpane.Url"/>
+            </Page>
+            <Metadata>
+              <SourceLocation resid="Functions.Metadata.Url"/>
+            </Metadata>
+						<Namespace resid="namespace"/>
+          </ExtensionPoint>
+        </AllFormFactors>
+        <DesktopFormFactor>
+          <FunctionFile resid="Taskpane.Url"/>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="Application.WpTab">
+
+              <Group id="Application.TaskpaneGroup">
+                <Label resid="Label.TaskpaneGroup"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16.TaskpaneGroup"/>
+                  <bt:Image size="20" resid="Icon.20x20.TaskpaneGroup"/>
+                  <bt:Image size="24" resid="Icon.24x24.TaskpaneGroup"/>
+                  <bt:Image size="32" resid="Icon.32x32.TaskpaneGroup"/>
+                  <bt:Image size="40" resid="Icon.40x40.TaskpaneGroup"/>
+                  <bt:Image size="80" resid="Icon.80x80.TaskpaneGroup"/>
+                </Icon>
+                <Control xsi:type="Button" id="Application.TaskpaneButton">
+                  <Label resid="Label.TaskpaneButton"/>
+                  <Supertip>
+                    <Title resid="TipTitle.TaskpaneButton"/>
+                    <Description resid="TipDescription.TaskpaneButton"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16.TaskpaneButton"/>
+                    <bt:Image size="20" resid="Icon.20x20.TaskpaneButton"/>
+                    <bt:Image size="24" resid="Icon.24x24.TaskpaneButton"/>
+                    <bt:Image size="32" resid="Icon.32x32.TaskpaneButton"/>
+                    <bt:Image size="40" resid="Icon.40x40.TaskpaneButton"/>
+                    <bt:Image size="80" resid="Icon.80x80.TaskpaneButton"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>Office.AutoShowTaskpaneWithDocument</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+
+              <Group id="Application.SelectionGroup">
+                <Label resid="Label.SelectionGroup"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16.SelectionGroup"/>
+                  <bt:Image size="20" resid="Icon.20x20.SelectionGroup"/>
+                  <bt:Image size="24" resid="Icon.24x24.SelectionGroup"/>
+                  <bt:Image size="32" resid="Icon.32x32.SelectionGroup"/>
+                  <bt:Image size="40" resid="Icon.40x40.SelectionGroup"/>
+                  <bt:Image size="80" resid="Icon.80x80.SelectionGroup"/>
+                </Icon>
+                <Control xsi:type="Menu" id="Application.ReviewMenu">
+                  <Label resid="Label.ReviewMenu"/>
+                  <Supertip>
+                    <Title resid="TipTitle.ReviewMenu"/>
+                    <Description resid="TipDescription.ReviewMenu"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16.ReviewMenu"/>
+                    <bt:Image size="20" resid="Icon.20x20.ReviewMenu"/>
+                    <bt:Image size="24" resid="Icon.24x24.ReviewMenu"/>
+                    <bt:Image size="32" resid="Icon.32x32.ReviewMenu"/>
+                    <bt:Image size="40" resid="Icon.40x40.ReviewMenu"/>
+                    <bt:Image size="80" resid="Icon.80x80.ReviewMenu"/>
+                  </Icon>
+                  <Items>
+                    <Item id="Application.ReviewMenu.Reviewed">
+                    <Label resid="Label.Reviewed"/>
+                    <Supertip>
+                      <Title resid="TipTitle.Reviewed"/>
+                      <Description resid="TipDescription.Reviewed"/>
+                    </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="Icon.16x16.Reviewed"/>
+                        <bt:Image size="20" resid="Icon.20x20.Reviewed"/>
+                        <bt:Image size="24" resid="Icon.24x24.Reviewed"/>
+                        <bt:Image size="32" resid="Icon.32x32.Reviewed"/>
+                        <bt:Image size="40" resid="Icon.40x40.Reviewed"/>
+                        <bt:Image size="80" resid="Icon.80x80.Reviewed"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>ApplicationExcelApp.commands.reviewedCommand</FunctionName>
+                      </Action>
+                    </Item>
+                      <Item id="Application.ReviewMenu.Ready">
+                      <Label resid="Label.Ready"/>
+                        <Supertip>
+                        <Title resid="TipTitle.Ready"/>
+                        <Description resid="TipDescription.Ready"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="Icon.16x16.Ready"/>
+                        <bt:Image size="20" resid="Icon.20x20.Ready"/>
+                        <bt:Image size="24" resid="Icon.24x24.Ready"/>
+                        <bt:Image size="32" resid="Icon.32x32.Ready"/>
+                        <bt:Image size="40" resid="Icon.40x40.Ready"/>
+                        <bt:Image size="80" resid="Icon.80x80.Ready"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>ApplicationExcelApp.commands.readyCommand</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="Application.ReviewMenu.Rework">
+                      <Label resid="Label.Rework"/>
+                        <Supertip>
+                        <Title resid="TipTitle.Rework"/>
+                        <Description resid="TipDescription.Rework"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="Icon.16x16.Rework"/>
+                        <bt:Image size="20" resid="Icon.20x20.Rework"/>
+                        <bt:Image size="24" resid="Icon.24x24.Rework"/>
+                        <bt:Image size="32" resid="Icon.32x32.Rework"/>
+                        <bt:Image size="40" resid="Icon.40x40.Rework"/>
+                        <bt:Image size="80" resid="Icon.80x80.Rework"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>ApplicationExcelApp.commands.reworkCommand</FunctionName>
+                      </Action>
+                    </Item>
+                  </Items>
+                </Control>
+                <Control xsi:type="Button" id="Application.AddReconField">
+                  <Label resid="Label.AddReconField"/>
+                  <Supertip>
+                    <Title resid="TipTitle.AddReconField"/>
+                    <Description resid="TipDescription.AddReconField"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16.AddReconField"/>
+                    <bt:Image size="20" resid="Icon.20x20.AddReconField"/>
+                    <bt:Image size="24" resid="Icon.24x24.AddReconField"/>
+                    <bt:Image size="32" resid="Icon.32x32.AddReconField"/>
+                    <bt:Image size="40" resid="Icon.40x40.AddReconField"/>
+                    <bt:Image size="80" resid="Icon.80x80.AddReconField"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>ApplicationExcelApp.commands.addReconFieldCommand</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="Application.AddDocumentLink">
+                  <Label resid="Label.AddDocumentLink"/>
+                  <Supertip>
+                    <Title resid="TipTitle.AddDocumentLink"/>
+                    <Description resid="TipDescription.AddDocumentLink"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16.AddDocumentLink"/>
+                    <bt:Image size="20" resid="Icon.20x20.AddDocumentLink"/>
+                    <bt:Image size="24" resid="Icon.24x24.AddDocumentLink"/>
+                    <bt:Image size="32" resid="Icon.32x32.AddDocumentLink"/>
+                    <bt:Image size="40" resid="Icon.40x40.AddDocumentLink"/>
+                    <bt:Image size="80" resid="Icon.80x80.AddDocumentLink"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>ApplicationExcelApp.commands.addDocumentLinkCommand</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="Application.InsertRowBelow">
+                  <Label resid="Label.InsertRowBelow"/>
+                  <Supertip>
+                    <Title resid="TipTitle.InsertRowBelow"/>
+                    <Description resid="TipDescription.InsertRowBelow"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16.InsertRowBelow"/>
+                    <bt:Image size="20" resid="Icon.20x20.InsertRowBelow"/>
+                    <bt:Image size="24" resid="Icon.24x24.InsertRowBelow"/>
+                    <bt:Image size="32" resid="Icon.32x32.InsertRowBelow"/>
+                    <bt:Image size="40" resid="Icon.40x40.InsertRowBelow"/>
+                    <bt:Image size="80" resid="Icon.80x80.InsertRowBelow"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>ApplicationExcelApp.commands.insertRowBelowCommand</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="Application.AddNote">
+                  <Label resid="Label.AddNote"/>
+                  <Supertip>
+                    <Title resid="TipTitle.AddNote"/>
+                    <Description resid="TipDescription.AddNote"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16.AddNote"/>
+                    <bt:Image size="20" resid="Icon.20x20.AddNote"/>
+                    <bt:Image size="24" resid="Icon.24x24.AddNote"/>
+                    <bt:Image size="32" resid="Icon.32x32.AddNote"/>
+                    <bt:Image size="40" resid="Icon.40x40.AddNote"/>
+                    <bt:Image size="80" resid="Icon.80x80.AddNote"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>ApplicationExcelApp.commands.createInternalNoteCommand</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="Application.AddQuery">
+                  <Label resid="Label.AddQuery"/>
+                  <Supertip>
+                    <Title resid="TipTitle.AddQuery"/>
+                    <Description resid="TipDescription.AddQuery"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16.AddQuery"/>
+                    <bt:Image size="20" resid="Icon.20x20.AddQuery"/>
+                    <bt:Image size="24" resid="Icon.24x24.AddQuery"/>
+                    <bt:Image size="32" resid="Icon.32x32.AddQuery"/>
+                    <bt:Image size="40" resid="Icon.40x40.AddQuery"/>
+                    <bt:Image size="80" resid="Icon.80x80.AddQuery"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>ApplicationExcelApp.commands.createClientQueryCommand</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+
+              <Group id="Application.ToolsGroup">
+                <Label resid="Label.ToolsGroup"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16.ToolsGroup"/>
+                  <bt:Image size="20" resid="Icon.20x20.ToolsGroup"/>
+                  <bt:Image size="24" resid="Icon.24x24.ToolsGroup"/>
+                  <bt:Image size="32" resid="Icon.32x32.ToolsGroup"/>
+                  <bt:Image size="40" resid="Icon.40x40.ToolsGroup"/>
+                  <bt:Image size="80" resid="Icon.80x80.ToolsGroup"/>
+                </Icon>
+                <Control xsi:type="Button" id="Application.Recalculate">
+                  <Label resid="Label.Recalculate"/>
+                  <Supertip>
+                    <Title resid="TipTitle.Recalculate"/>
+                    <Description resid="TipDescription.Recalculate"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16.Recalculate"/>
+                    <bt:Image size="20" resid="Icon.20x20.Recalculate"/>
+                    <bt:Image size="24" resid="Icon.24x24.Recalculate"/>
+                    <bt:Image size="32" resid="Icon.32x32.Recalculate"/>
+                    <bt:Image size="40" resid="Icon.40x40.Recalculate"/>
+                    <bt:Image size="80" resid="Icon.80x80.Recalculate"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>ApplicationExcelApp.commands.recalculateFormulasCommand</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="Application.TemplateEditMode">
+                  <Label resid="Label.TemplateEditMode"/>
+                  <Supertip>
+                    <Title resid="TipTitle.TemplateEditMode"/>
+                    <Description resid="TipDescription.TemplateEditMode"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16.TemplateEditMode"/>
+                    <bt:Image size="20" resid="Icon.20x20.TemplateEditMode"/>
+                    <bt:Image size="24" resid="Icon.24x24.TemplateEditMode"/>
+                    <bt:Image size="32" resid="Icon.32x32.TemplateEditMode"/>
+                    <bt:Image size="40" resid="Icon.40x40.TemplateEditMode"/>
+                    <bt:Image size="80" resid="Icon.80x80.TemplateEditMode"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>ApplicationExcelApp.commands.templateEditModeCommand</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="Application.OptimisePerf">
+                  <Label resid="Label.OptimisePerf"/>
+                  <Supertip>
+                    <Title resid="TipTitle.OptimisePerf"/>
+                    <Description resid="TipDescription.OptimisePerf"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16.OptimisePerf"/>
+                    <bt:Image size="20" resid="Icon.20x20.OptimisePerf"/>
+                    <bt:Image size="24" resid="Icon.24x24.OptimisePerf"/>
+                    <bt:Image size="32" resid="Icon.32x32.OptimisePerf"/>
+                    <bt:Image size="40" resid="Icon.40x40.OptimisePerf"/>
+                    <bt:Image size="80" resid="Icon.80x80.OptimisePerf"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>ApplicationExcelApp.commands.optimisePerfCommand</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+              <Label resid="Label.Tab"/>
+            </CustomTab>
+          </ExtensionPoint>
+
+          <ExtensionPoint xsi:type="ContextMenu">
+            <OfficeMenu id="ContextMenuCell">
+
+              <Control xsi:type="Menu" id="Application.WpMenu.Menu">
+                <Label resid="Label.WpMenu"/>
+                <Supertip>
+                  <Title resid="TipTitle.WpMenu"/>
+                  <Description resid="TipDescription.WpMenu"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16.WpMenu"/>
+                  <bt:Image size="20" resid="Icon.20x20.WpMenu"/>
+                  <bt:Image size="24" resid="Icon.24x24.WpMenu"/>
+                  <bt:Image size="32" resid="Icon.32x32.WpMenu"/>
+                  <bt:Image size="40" resid="Icon.40x40.WpMenu"/>
+                  <bt:Image size="80" resid="Icon.80x80.WpMenu"/>
+                </Icon>
+                <Items>
+                  <Item id="Application.WpMenu.ReconField">
+                    <Label resid="Label.ReconField"/>
+                    <Supertip>
+                      <Title resid="TipTitle.ReconField"/>
+                      <Description resid="TipDescription.ReconField"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="Icon.16x16.ReconField"/>
+                      <bt:Image size="20" resid="Icon.20x20.ReconField"/>
+                      <bt:Image size="24" resid="Icon.24x24.ReconField"/>
+                      <bt:Image size="32" resid="Icon.32x32.ReconField"/>
+                      <bt:Image size="40" resid="Icon.40x40.ReconField"/>
+                      <bt:Image size="80" resid="Icon.80x80.ReconField"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                      <FunctionName>ApplicationExcelApp.commands.addReconFieldCommand</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="Application.WpMenu.PasteSmartLink">
+                    <Label resid="Label.PasteSmartLink"/>
+                    <Supertip>
+                      <Title resid="TipTitle.PasteSmartLink"/>
+                      <Description resid="TipDescription.PasteSmartLink"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="Icon.16x16.PasteSmartLink"/>
+                      <bt:Image size="20" resid="Icon.20x20.PasteSmartLink"/>
+                      <bt:Image size="24" resid="Icon.24x24.PasteSmartLink"/>
+                      <bt:Image size="32" resid="Icon.32x32.PasteSmartLink"/>
+                      <bt:Image size="40" resid="Icon.40x40.PasteSmartLink"/>
+                      <bt:Image size="80" resid="Icon.80x80.PasteSmartLink"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                      <FunctionName>ApplicationExcelApp.commands.pasteSmartLinkCommand</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="Application.WpMenu.DocumentLink">
+                    <Label resid="Label.DocumentLink"/>
+                    <Supertip>
+                      <Title resid="TipTitle.DocumentLink"/>
+                      <Description resid="TipDescription.DocumentLink"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="Icon.16x16.DocumentLink"/>
+                      <bt:Image size="20" resid="Icon.20x20.DocumentLink"/>
+                      <bt:Image size="24" resid="Icon.24x24.DocumentLink"/>
+                      <bt:Image size="32" resid="Icon.32x32.DocumentLink"/>
+                      <bt:Image size="40" resid="Icon.40x40.DocumentLink"/>
+                      <bt:Image size="80" resid="Icon.80x80.DocumentLink"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                      <FunctionName>ApplicationExcelApp.commands.addDocumentLinkCommand</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="Application.WpMenu.RowBelow">
+                    <Label resid="Label.RowBelow"/>
+                    <Supertip>
+                      <Title resid="TipTitle.RowBelow"/>
+                      <Description resid="TipDescription.RowBelow"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="Icon.16x16.RowBelow"/>
+                      <bt:Image size="20" resid="Icon.20x20.RowBelow"/>
+                      <bt:Image size="24" resid="Icon.24x24.RowBelow"/>
+                      <bt:Image size="32" resid="Icon.32x32.RowBelow"/>
+                      <bt:Image size="40" resid="Icon.40x40.RowBelow"/>
+                      <bt:Image size="80" resid="Icon.80x80.RowBelow"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                      <FunctionName>ApplicationExcelApp.commands.insertRowBelowCommand</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="Application.WpMenu.CreateNote">
+                    <Label resid="Label.CreateNote"/>
+                    <Supertip>
+                      <Title resid="TipTitle.CreateNote"/>
+                      <Description resid="TipDescription.CreateNote"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="Icon.16x16.CreateNote"/>
+                      <bt:Image size="20" resid="Icon.20x20.CreateNote"/>
+                      <bt:Image size="24" resid="Icon.24x24.CreateNote"/>
+                      <bt:Image size="32" resid="Icon.32x32.CreateNote"/>
+                      <bt:Image size="40" resid="Icon.40x40.CreateNote"/>
+                      <bt:Image size="80" resid="Icon.80x80.CreateNote"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                      <FunctionName>ApplicationExcelApp.commands.createInternalNoteCommand</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="Application.WpMenu.CreateQuery">
+                    <Label resid="Label.CreateQuery"/>
+                    <Supertip>
+                      <Title resid="TipTitle.CreateQuery"/>
+                      <Description resid="TipDescription.CreateQuery"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="Icon.16x16.CreateQuery"/>
+                      <bt:Image size="20" resid="Icon.20x20.CreateQuery"/>
+                      <bt:Image size="24" resid="Icon.24x24.CreateQuery"/>
+                      <bt:Image size="32" resid="Icon.32x32.CreateQuery"/>
+                      <bt:Image size="40" resid="Icon.40x40.CreateQuery"/>
+                      <bt:Image size="80" resid="Icon.80x80.CreateQuery"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                      <FunctionName>ApplicationExcelApp.commands.createClientQueryCommand</FunctionName>
+                    </Action>
+                  </Item>
+                </Items>
+              </Control>
+            </OfficeMenu>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+
+        <bt:Image id="Icon.16x16.TaskpaneGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-16.png"/>
+        <bt:Image id="Icon.20x20.TaskpaneGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-20.png"/>
+        <bt:Image id="Icon.24x24.TaskpaneGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-24.png"/>
+        <bt:Image id="Icon.32x32.TaskpaneGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-32.png"/>
+        <bt:Image id="Icon.40x40.TaskpaneGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-40.png"/>
+        <bt:Image id="Icon.80x80.TaskpaneGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-80.png"/>
+        <bt:Image id="Icon.16x16.TaskpaneButton" DefaultValue="https://localhost:3000/assets/icons/excel/Application-16.png"/>
+        <bt:Image id="Icon.20x20.TaskpaneButton" DefaultValue="https://localhost:3000/assets/icons/excel/Application-20.png"/>
+        <bt:Image id="Icon.24x24.TaskpaneButton" DefaultValue="https://localhost:3000/assets/icons/excel/Application-24.png"/>
+        <bt:Image id="Icon.32x32.TaskpaneButton" DefaultValue="https://localhost:3000/assets/icons/excel/Application-32.png"/>
+        <bt:Image id="Icon.40x40.TaskpaneButton" DefaultValue="https://localhost:3000/assets/icons/excel/Application-40.png"/>
+        <bt:Image id="Icon.80x80.TaskpaneButton" DefaultValue="https://localhost:3000/assets/icons/excel/Application-80.png"/>
+
+        <bt:Image id="Icon.16x16.SelectionGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-16.png"/>
+        <bt:Image id="Icon.20x20.SelectionGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-20.png"/>
+        <bt:Image id="Icon.24x24.SelectionGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-24.png"/>
+        <bt:Image id="Icon.32x32.SelectionGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-32.png"/>
+        <bt:Image id="Icon.40x40.SelectionGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-40.png"/>
+        <bt:Image id="Icon.80x80.SelectionGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-80.png"/>
+        <bt:Image id="Icon.16x16.ReviewMenu" DefaultValue="https://localhost:3000/assets/icons/excel/Review-16.png"/>
+        <bt:Image id="Icon.20x20.ReviewMenu" DefaultValue="https://localhost:3000/assets/icons/excel/Review-20.png"/>
+        <bt:Image id="Icon.24x24.ReviewMenu" DefaultValue="https://localhost:3000/assets/icons/excel/Review-24.png"/>
+        <bt:Image id="Icon.32x32.ReviewMenu" DefaultValue="https://localhost:3000/assets/icons/excel/Review-32.png"/>
+        <bt:Image id="Icon.40x40.ReviewMenu" DefaultValue="https://localhost:3000/assets/icons/excel/Review-40.png"/>
+        <bt:Image id="Icon.80x80.ReviewMenu" DefaultValue="https://localhost:3000/assets/icons/excel/Review-80.png"/>
+        <bt:Image id="Icon.16x16.Reviewed" DefaultValue="https://localhost:3000/assets/icons/excel/Reviewed-16.png"/>
+        <bt:Image id="Icon.20x20.Reviewed" DefaultValue="https://localhost:3000/assets/icons/excel/Reviewed-20.png"/>
+        <bt:Image id="Icon.24x24.Reviewed" DefaultValue="https://localhost:3000/assets/icons/excel/Reviewed-24.png"/>
+        <bt:Image id="Icon.32x32.Reviewed" DefaultValue="https://localhost:3000/assets/icons/excel/Reviewed-32.png"/>
+        <bt:Image id="Icon.40x40.Reviewed" DefaultValue="https://localhost:3000/assets/icons/excel/Reviewed-40.png"/>
+        <bt:Image id="Icon.80x80.Reviewed" DefaultValue="https://localhost:3000/assets/icons/excel/Reviewed-80.png"/>
+        <bt:Image id="Icon.16x16.Ready" DefaultValue="https://localhost:3000/assets/icons/excel/Ready-16.png"/>
+        <bt:Image id="Icon.20x20.Ready" DefaultValue="https://localhost:3000/assets/icons/excel/Ready-20.png"/>
+        <bt:Image id="Icon.24x24.Ready" DefaultValue="https://localhost:3000/assets/icons/excel/Ready-24.png"/>
+        <bt:Image id="Icon.32x32.Ready" DefaultValue="https://localhost:3000/assets/icons/excel/Ready-32.png"/>
+        <bt:Image id="Icon.40x40.Ready" DefaultValue="https://localhost:3000/assets/icons/excel/Ready-40.png"/>
+        <bt:Image id="Icon.80x80.Ready" DefaultValue="https://localhost:3000/assets/icons/excel/Ready-80.png"/>
+        <bt:Image id="Icon.16x16.Rework" DefaultValue="https://localhost:3000/assets/icons/excel/Rework-16.png"/>
+        <bt:Image id="Icon.20x20.Rework" DefaultValue="https://localhost:3000/assets/icons/excel/Rework-20.png"/>
+        <bt:Image id="Icon.24x24.Rework" DefaultValue="https://localhost:3000/assets/icons/excel/Rework-24.png"/>
+        <bt:Image id="Icon.32x32.Rework" DefaultValue="https://localhost:3000/assets/icons/excel/Rework-32.png"/>
+        <bt:Image id="Icon.40x40.Rework" DefaultValue="https://localhost:3000/assets/icons/excel/Rework-40.png"/>
+        <bt:Image id="Icon.80x80.Rework" DefaultValue="https://localhost:3000/assets/icons/excel/Rework-80.png"/>
+        <bt:Image id="Icon.16x16.AddReconField" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Reconciliation-Field-16.png"/>
+        <bt:Image id="Icon.20x20.AddReconField" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Reconciliation-Field-20.png"/>
+        <bt:Image id="Icon.24x24.AddReconField" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Reconciliation-Field-24.png"/>
+        <bt:Image id="Icon.32x32.AddReconField" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Reconciliation-Field-32.png"/>
+        <bt:Image id="Icon.40x40.AddReconField" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Reconciliation-Field-40.png"/>
+        <bt:Image id="Icon.80x80.AddReconField" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Reconciliation-Field-80.png"/>
+        <bt:Image id="Icon.16x16.AddDocumentLink" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Document-Link-16.png"/>
+        <bt:Image id="Icon.20x20.AddDocumentLink" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Document-Link-20.png"/>
+        <bt:Image id="Icon.24x24.AddDocumentLink" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Document-Link-24.png"/>
+        <bt:Image id="Icon.32x32.AddDocumentLink" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Document-Link-32.png"/>
+        <bt:Image id="Icon.40x40.AddDocumentLink" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Document-Link-40.png"/>
+        <bt:Image id="Icon.80x80.AddDocumentLink" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Document-Link-80.png"/>
+        <bt:Image id="Icon.16x16.InsertRowBelow" DefaultValue="https://localhost:3000/assets/icons/excel/Insert-Row-Below-16.png"/>
+        <bt:Image id="Icon.20x20.InsertRowBelow" DefaultValue="https://localhost:3000/assets/icons/excel/Insert-Row-Below-20.png"/>
+        <bt:Image id="Icon.24x24.InsertRowBelow" DefaultValue="https://localhost:3000/assets/icons/excel/Insert-Row-Below-24.png"/>
+        <bt:Image id="Icon.32x32.InsertRowBelow" DefaultValue="https://localhost:3000/assets/icons/excel/Insert-Row-Below-32.png"/>
+        <bt:Image id="Icon.40x40.InsertRowBelow" DefaultValue="https://localhost:3000/assets/icons/excel/Insert-Row-Below-40.png"/>
+        <bt:Image id="Icon.80x80.InsertRowBelow" DefaultValue="https://localhost:3000/assets/icons/excel/Insert-Row-Below-80.png"/>
+        <bt:Image id="Icon.16x16.AddNote" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Internal-Note-16.png"/>
+        <bt:Image id="Icon.20x20.AddNote" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Internal-Note-20.png"/>
+        <bt:Image id="Icon.24x24.AddNote" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Internal-Note-24.png"/>
+        <bt:Image id="Icon.32x32.AddNote" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Internal-Note-32.png"/>
+        <bt:Image id="Icon.40x40.AddNote" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Internal-Note-40.png"/>
+        <bt:Image id="Icon.80x80.AddNote" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Internal-Note-80.png"/>
+        <bt:Image id="Icon.16x16.AddQuery" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Client-Query-16.png"/>
+        <bt:Image id="Icon.20x20.AddQuery" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Client-Query-20.png"/>
+        <bt:Image id="Icon.24x24.AddQuery" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Client-Query-24.png"/>
+        <bt:Image id="Icon.32x32.AddQuery" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Client-Query-32.png"/>
+        <bt:Image id="Icon.40x40.AddQuery" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Client-Query-40.png"/>
+        <bt:Image id="Icon.80x80.AddQuery" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Client-Query-80.png"/>
+
+        <bt:Image id="Icon.16x16.ToolsGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-16.png"/>
+        <bt:Image id="Icon.20x20.ToolsGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-20.png"/>
+        <bt:Image id="Icon.24x24.ToolsGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-24.png"/>
+        <bt:Image id="Icon.32x32.ToolsGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-32.png"/>
+        <bt:Image id="Icon.40x40.ToolsGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-40.png"/>
+        <bt:Image id="Icon.80x80.ToolsGroup" DefaultValue="https://localhost:3000/assets/icons/excel/Application-80.png"/>
+        <bt:Image id="Icon.16x16.Recalculate" DefaultValue="https://localhost:3000/assets/icons/excel/Recalculate-16.png"/>
+        <bt:Image id="Icon.20x20.Recalculate" DefaultValue="https://localhost:3000/assets/icons/excel/Recalculate-20.png"/>
+        <bt:Image id="Icon.24x24.Recalculate" DefaultValue="https://localhost:3000/assets/icons/excel/Recalculate-24.png"/>
+        <bt:Image id="Icon.32x32.Recalculate" DefaultValue="https://localhost:3000/assets/icons/excel/Recalculate-32.png"/>
+        <bt:Image id="Icon.40x40.Recalculate" DefaultValue="https://localhost:3000/assets/icons/excel/Recalculate-40.png"/>
+        <bt:Image id="Icon.80x80.Recalculate" DefaultValue="https://localhost:3000/assets/icons/excel/Recalculate-80.png"/>
+        <bt:Image id="Icon.16x16.TemplateEditMode" DefaultValue="https://localhost:3000/assets/icons/excel/Template-Edit-16.png"/>
+        <bt:Image id="Icon.20x20.TemplateEditMode" DefaultValue="https://localhost:3000/assets/icons/excel/Template-Edit-20.png"/>
+        <bt:Image id="Icon.24x24.TemplateEditMode" DefaultValue="https://localhost:3000/assets/icons/excel/Template-Edit-24.png"/>
+        <bt:Image id="Icon.32x32.TemplateEditMode" DefaultValue="https://localhost:3000/assets/icons/excel/Template-Edit-32.png"/>
+        <bt:Image id="Icon.40x40.TemplateEditMode" DefaultValue="https://localhost:3000/assets/icons/excel/Template-Edit-40.png"/>
+        <bt:Image id="Icon.80x80.TemplateEditMode" DefaultValue="https://localhost:3000/assets/icons/excel/Template-Edit-80.png"/>
+        <bt:Image id="Icon.16x16.OptimisePerf" DefaultValue="https://localhost:3000/assets/icons/excel/Optimise-Perf-16.png"/>
+        <bt:Image id="Icon.20x20.OptimisePerf" DefaultValue="https://localhost:3000/assets/icons/excel/Optimise-Perf-20.png"/>
+        <bt:Image id="Icon.24x24.OptimisePerf" DefaultValue="https://localhost:3000/assets/icons/excel/Optimise-Perf-24.png"/>
+        <bt:Image id="Icon.32x32.OptimisePerf" DefaultValue="https://localhost:3000/assets/icons/excel/Optimise-Perf-32.png"/>
+        <bt:Image id="Icon.40x40.OptimisePerf" DefaultValue="https://localhost:3000/assets/icons/excel/Optimise-Perf-40.png"/>
+        <bt:Image id="Icon.80x80.OptimisePerf" DefaultValue="https://localhost:3000/assets/icons/excel/Optimise-Perf-80.png"/>
+
+        <bt:Image id="Icon.16x16.WpMenu" DefaultValue="https://localhost:3000/assets/icons/excel/Application-16.png"/>
+        <bt:Image id="Icon.20x20.WpMenu" DefaultValue="https://localhost:3000/assets/icons/excel/Application-20.png"/>
+        <bt:Image id="Icon.24x24.WpMenu" DefaultValue="https://localhost:3000/assets/icons/excel/Application-24.png"/>
+        <bt:Image id="Icon.32x32.WpMenu" DefaultValue="https://localhost:3000/assets/icons/excel/Application-32.png"/>
+        <bt:Image id="Icon.40x40.WpMenu" DefaultValue="https://localhost:3000/assets/icons/excel/Application-40.png"/>
+        <bt:Image id="Icon.80x80.WpMenu" DefaultValue="https://localhost:3000/assets/icons/excel/Application-80.png"/>
+        <bt:Image id="Icon.16x16.CreateNote" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Internal-Note-16.png"/>
+        <bt:Image id="Icon.20x20.CreateNote" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Internal-Note-20.png"/>
+        <bt:Image id="Icon.24x24.CreateNote" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Internal-Note-24.png"/>
+        <bt:Image id="Icon.32x32.CreateNote" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Internal-Note-32.png"/>
+        <bt:Image id="Icon.40x40.CreateNote" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Internal-Note-40.png"/>
+        <bt:Image id="Icon.80x80.CreateNote" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Internal-Note-80.png"/>
+        <bt:Image id="Icon.16x16.CreateQuery" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Client-Query-16.png"/>
+        <bt:Image id="Icon.20x20.CreateQuery" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Client-Query-20.png"/>
+        <bt:Image id="Icon.24x24.CreateQuery" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Client-Query-24.png"/>
+        <bt:Image id="Icon.32x32.CreateQuery" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Client-Query-32.png"/>
+        <bt:Image id="Icon.40x40.CreateQuery" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Client-Query-40.png"/>
+        <bt:Image id="Icon.80x80.CreateQuery" DefaultValue="https://localhost:3000/assets/icons/excel/Create-Client-Query-80.png"/>
+        <bt:Image id="Icon.16x16.ReconField" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Reconciliation-Field-16.png"/>
+        <bt:Image id="Icon.20x20.ReconField" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Reconciliation-Field-20.png"/>
+        <bt:Image id="Icon.24x24.ReconField" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Reconciliation-Field-24.png"/>
+        <bt:Image id="Icon.32x32.ReconField" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Reconciliation-Field-32.png"/>
+        <bt:Image id="Icon.40x40.ReconField" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Reconciliation-Field-40.png"/>
+        <bt:Image id="Icon.80x80.ReconField" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Reconciliation-Field-80.png"/>
+        <bt:Image id="Icon.16x16.PasteSmartLink" DefaultValue="https://localhost:3000/assets/icons/excel/Paste-Smart-Link-16.png"/>
+        <bt:Image id="Icon.20x20.PasteSmartLink" DefaultValue="https://localhost:3000/assets/icons/excel/Paste-Smart-Link-20.png"/>
+        <bt:Image id="Icon.24x24.PasteSmartLink" DefaultValue="https://localhost:3000/assets/icons/excel/Paste-Smart-Link-24.png"/>
+        <bt:Image id="Icon.32x32.PasteSmartLink" DefaultValue="https://localhost:3000/assets/icons/excel/Paste-Smart-Link-32.png"/>
+        <bt:Image id="Icon.40x40.PasteSmartLink" DefaultValue="https://localhost:3000/assets/icons/excel/Paste-Smart-Link-40.png"/>
+        <bt:Image id="Icon.80x80.PasteSmartLink" DefaultValue="https://localhost:3000/assets/icons/excel/Paste-Smart-Link-80.png"/>
+        <bt:Image id="Icon.16x16.DocumentLink" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Document-Link-16.png"/>
+        <bt:Image id="Icon.20x20.DocumentLink" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Document-Link-20.png"/>
+        <bt:Image id="Icon.24x24.DocumentLink" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Document-Link-24.png"/>
+        <bt:Image id="Icon.32x32.DocumentLink" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Document-Link-32.png"/>
+        <bt:Image id="Icon.40x40.DocumentLink" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Document-Link-40.png"/>
+        <bt:Image id="Icon.80x80.DocumentLink" DefaultValue="https://localhost:3000/assets/icons/excel/Add-Document-Link-80.png"/>
+        <bt:Image id="Icon.16x16.RowBelow" DefaultValue="https://localhost:3000/assets/icons/excel/Insert-Row-Below-16.png"/>
+        <bt:Image id="Icon.20x20.RowBelow" DefaultValue="https://localhost:3000/assets/icons/excel/Insert-Row-Below-20.png"/>
+        <bt:Image id="Icon.24x24.RowBelow" DefaultValue="https://localhost:3000/assets/icons/excel/Insert-Row-Below-24.png"/>
+        <bt:Image id="Icon.32x32.RowBelow" DefaultValue="https://localhost:3000/assets/icons/excel/Insert-Row-Below-32.png"/>
+        <bt:Image id="Icon.40x40.RowBelow" DefaultValue="https://localhost:3000/assets/icons/excel/Insert-Row-Below-40.png"/>
+        <bt:Image id="Icon.80x80.RowBelow" DefaultValue="https://localhost:3000/assets/icons/excel/Insert-Row-Below-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/"/>
+        <bt:Url id="Functions.Metadata.Url" DefaultValue="https://localhost:3000/functions/functions.json"/>
+        <bt:Url id="KeyboardShortcut.Metadata.Url" DefaultValue="https://localhost:3000/functions/shortcuts.json"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+				<bt:String id="namespace" DefaultValue="WP"/>
+        <bt:String id="Label.Tab" DefaultValue="My Application (Local)"/>
+
+        <bt:String id="Label.TaskpaneGroup" DefaultValue="App"/>
+        <bt:String id="Label.TaskpaneButton" DefaultValue="Open Taskpane"/>
+        <bt:String id="TipTitle.TaskpaneButton" DefaultValue="Taskpane"/>
+
+        <bt:String id="Label.ReviewMenu" DefaultValue="Cell Review"/>
+        <bt:String id="Label.Reviewed" DefaultValue="Reviewed"/>
+        <bt:String id="Label.Ready" DefaultValue="Ready for Review"/>
+        <bt:String id="Label.Rework" DefaultValue="Rework"/>
+        <bt:String id="Label.SelectionGroup" DefaultValue="Selected Cell"/>
+        <bt:String id="Label.AddReconField" DefaultValue="Add Reconciliation Field"/>
+        <bt:String id="Label.AddDocumentLink" DefaultValue="Add Document Link"/>
+        <bt:String id="Label.InsertRowBelow" DefaultValue="Insert Row Below"/>
+        <bt:String id="Label.AddNote" DefaultValue="Create Internal Note"/>
+        <bt:String id="Label.AddQuery" DefaultValue="Create Client Query"/>
+        <bt:String id="TipTitle.ReviewMenu" DefaultValue="Cell Review"/>
+        <bt:String id="TipTitle.Reviewed" DefaultValue="Reviewed"/>
+        <bt:String id="TipTitle.Ready" DefaultValue="Ready for Review"/>
+        <bt:String id="TipTitle.Rework" DefaultValue="Rework"/>
+        <bt:String id="TipTitle.AddReconField" DefaultValue="Add Reconciliation Field"/>
+        <bt:String id="TipTitle.AddDocumentLink" DefaultValue="Document Link"/>
+        <bt:String id="TipTitle.InsertRowBelow" DefaultValue="Insert Row Below"/>
+        <bt:String id="TipTitle.AddNote" DefaultValue="Internal Note"/>
+        <bt:String id="TipTitle.AddQuery" DefaultValue="Client Query"/>
+
+        <bt:String id="Label.ToolsGroup" DefaultValue="Tools"/>
+        <bt:String id="Label.Recalculate" DefaultValue="Recalculate Formulas"/>
+        <bt:String id="Label.TemplateEditMode" DefaultValue="Template Edit Mode"/>
+        <bt:String id="Label.OptimisePerf" DefaultValue="Optimise Performance"/>
+        <bt:String id="TipTitle.Recalculate" DefaultValue="Recalculate"/>
+        <bt:String id="TipTitle.TemplateEditMode" DefaultValue="Edit Mode"/>
+        <bt:String id="TipTitle.OptimisePerf" DefaultValue="Performance Optimisation"/>
+
+        <bt:String id="Label.WpMenu" DefaultValue="My Application (Local)"/>
+        <bt:String id="Label.CreateNote" DefaultValue="Create Internal Note"/>
+        <bt:String id="Label.CreateQuery" DefaultValue="Create Client Query"/>
+        <bt:String id="Label.ReconField" DefaultValue="Add Reconciliation Field"/>
+        <bt:String id="Label.PasteSmartLink" DefaultValue="Paste Smart Link"/>
+        <bt:String id="Label.DocumentLink" DefaultValue="Add Document Link"/>
+        <bt:String id="Label.RowBelow" DefaultValue="Insert Row Below"/>
+        <bt:String id="TipTitle.WpMenu" DefaultValue="My Application"/>
+        <bt:String id="TipTitle.CreateNote" DefaultValue="Internal Note"/>
+        <bt:String id="TipTitle.CreateQuery" DefaultValue="Client Query"/>
+        <bt:String id="TipTitle.ReconField" DefaultValue="Reconciliation Field"/>
+        <bt:String id="TipTitle.PasteSmartLink" DefaultValue="Smart Link"/>
+        <bt:String id="TipTitle.DocumentLink" DefaultValue="Document Link"/>
+        <bt:String id="TipTitle.RowBelow" DefaultValue="Insert Row"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+
+        <bt:String id="TipDescription.TaskpaneButton" DefaultValue="Opens the My Application taskpane."/>
+
+        <bt:String id="TipDescription.ReviewMenu" DefaultValue="Choose from the menu to mark the selected cell."/>
+        <bt:String id="TipDescription.Reviewed" DefaultValue="Marks the selected cell as Reviewed."/>
+        <bt:String id="TipDescription.Ready" DefaultValue="Marks the selected cell as Ready for Review."/>
+        <bt:String id="TipDescription.Rework" DefaultValue="Marks the selected cell for Rework."/>
+        <bt:String id="TipDescription.AddReconField" DefaultValue="Creates a Reconciliation Field named range at the selected cell."/>
+        <bt:String id="TipDescription.AddDocumentLink" DefaultValue="Inserts a link to a source document at the selected cell."/>
+        <bt:String id="TipDescription.InsertRowBelow" DefaultValue="Inserts a row Below the currently selected cell including formatting and formulas."/>
+        <bt:String id="TipDescription.AddNote" DefaultValue="Creates an internal note."/>
+        <bt:String id="TipDescription.AddQuery" DefaultValue="Creates a client query."/>
+
+        <bt:String id="TipDescription.Recalculate" DefaultValue="Recalculate all currently opened workbooks in Excel."/>
+        <bt:String id="TipDescription.TemplateEditMode" DefaultValue="Toggles template edit mode."/>
+        <bt:String id="TipDescription.OptimisePerf" DefaultValue="Optimises the performance of the workbooks functions."/>
+
+        <bt:String id="TipDescription.WpMenu" DefaultValue="My Application."/>
+        <bt:String id="TipDescription.CreateNote" DefaultValue="Creates an internal note."/>
+        <bt:String id="TipDescription.CreateQuery" DefaultValue="Creates a client query."/>
+        <bt:String id="TipDescription.ReconField" DefaultValue="Creates a reconciliation field."/>
+        <bt:String id="TipDescription.PasteSmartLink" DefaultValue="Pastes a smart link."/>
+        <bt:String id="TipDescription.DocumentLink" DefaultValue="Inserts a link to a source document."/>
+        <bt:String id="TipDescription.RowBelow" DefaultValue="Inserts a row Below the currently selected cell."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+  <ExtendedOverrides Url="https://localhost:3000/functions/shortcuts.json"></ExtendedOverrides>
+</OfficeApp>
